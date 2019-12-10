@@ -93,3 +93,13 @@ CollectionType >> printOn: aStream [
 		print: elementType;
 		<< ')'
 ]
+
+{ #category : #printing }
+CollectionType >> size [
+	^ self propertyAt: #size
+]
+
+{ #category : #printing }
+CollectionType >> size: aNumber [
+	self propertyAt: #size put: aNumber
+]

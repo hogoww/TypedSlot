@@ -1,6 +1,8 @@
 Class {
 	#name : #AbstractTypeConstraint,
 	#superclass : #AbstractConstraint,
+	#traits : 'ExtraPropertiesTrait',
+	#classTraits : 'ExtraPropertiesTrait classTrait',
 	#category : #TypedSlotHogo
 }
 
