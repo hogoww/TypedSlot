@@ -6,6 +6,11 @@ Symbol >> asInterfaceConstraint [
 ]
 
 { #category : #'*TypedSlot' }
+Symbol >> asPharoType [
+	^ NonPharoType new type: self; yourself
+]
+
+{ #category : #'*TypedSlot' }
 Symbol >> mustUse: aTrait [
 	^ self type: aTrait
 ]
