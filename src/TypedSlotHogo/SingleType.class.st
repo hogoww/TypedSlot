@@ -37,6 +37,13 @@ SingleType >> checkConstraint: anObject [
 	((anObject isKindOf: type) or: [ anObject isNil ]) ifFalse: [ self wasViolatedBy: anObject ]
 ]
 
+{ #category : #creating }
+SingleType >> createCTypeIn: aCType [ 
+	type = VMClass ifTrue: [ ^ aCType type: #sqInt ].
+	self error: 'unknown type'
+	
+]
+
 { #category : #printing }
 SingleType >> definitionStringOn: aStream [
 	aStream 

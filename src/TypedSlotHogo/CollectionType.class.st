@@ -50,6 +50,17 @@ CollectionType >> collectionType: aType [
 	collectionType := aType
 ]
 
+{ #category : #creating }
+CollectionType >> createCTypeIn: aCType [ 
+	collectionType = Array asTypeReification ifTrue: [ 
+		self size 
+			ifNil: [ aCType  dimension: aCType dimension + 1 ]
+			ifNotNil: [ :size | aCType  addStaticArrayDeclarationOfSize: self size ]
+		].
+	elementType createCTypeIn: aCType.
+	^ aCType
+]
+
 { #category : #printing }
 CollectionType >> definitionStringOn: aStream [
 	aStream << '('.
